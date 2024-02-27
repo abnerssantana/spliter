@@ -1,24 +1,19 @@
-# SPLITER
+# Splitter
 
-  1. Python 3.9.5 
+Software necessário: 
+  1. Python 3 https://www.python.org/
   2. pip3
-  3. Visual Studio Code (VSC)
+  3. pip install pdfplumber 
+  4. pip install PyPDF2
 
-#### STEPS
+### COMO USAR
+   * Adicione o arquivo comprovantes.pdf na pasta PDF (o arquivo precisa ter este nome)
+   * Na pasta principal Spliter, digite cmd na barra de endereços e aperte ↵ Enter
+   * Na janela do terminal que abriu execute o camando: python splitpdf.py (divide o arquivo em páginas)
+   * Os novos arquivos serão criados na pasta PDF_SPLIT
+   * Na janela do terminal execute o próximo comando: renamepdf.py (captura o texto valor/nome e renomeia)
+   * Os novos arquivos renomeados ficam na pasta PDF_FINAL
 
-1. Change default profile within VSC:
-    * CMD/CTRL + SHIFT + P
-    * Search "Terminal: Select Default Profile"
-    * Click "Command Prompt" 
-   
-2. Create and activate the virtual environment + install library (run commands in a new CMD terminal)
-   1. py -m venv venv 
-      * (Creates virtual environment)
-   2. venv\Scripts\activate                   
-      * (activates virtual environment)
-   3. python -m pip install --upgrade pip     
-      * (Upgrade pip in virtual environment)
-   4. python -m pip install --upgrade pymupdf
-      * (Install the PyMuPDF library)
-   
-3. Create the python file (you can use any name or follow the tutorial)
+Se o tipo de comprovante não for identificado, ficaram na pasta PDF_SPLIT.
+
+ABNSS - 0.1 - 27 FEV 2024

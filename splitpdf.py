@@ -1,3 +1,4 @@
+#ABNSS - Splitter | 27 FEV 2024 - Pages PDF
 import PyPDF2
 
 def dividir_pdf(input_path, output_path):
@@ -14,7 +15,7 @@ def dividir_pdf(input_path, output_path):
                 print(f'Página {page_num + 1} dividida para {output_file_path}')
 
 if __name__ == "__main__":
-    input_file_path = "PDF/Comprovante.pdf"
+    input_file_path = "PDF/comprovantes.pdf"
     output_folder_path = "PDF_SPLIT"
 
     dividir_pdf(input_file_path, output_folder_path)

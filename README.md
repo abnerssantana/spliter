@@ -2,9 +2,8 @@
 
 ## Softwares Necessários:
 1. Python 3: https://www.python.org/
-2. pip3
-3. pip install pdfplumber
-4. pip install PyPDF2
+2. PyPDF2 (pip3 install PyPDF2)
+3. pdfplumber (pip install pdfplumber)
 
 ### INSTRUÇÕES DE USO
 

@@ -9,7 +9,7 @@
 
 * Adicione o arquivo "comprovantes.pdf" à pasta PDF (o arquivo deve ter esse nome).
 * Na pasta principal Splitter, digite "cmd" na barra de endereços e pressione ↵ Enter.
-* Na janela do terminal que abrir, execute o comando: python splitpdf.py (divide o arquivo em páginas).
+* Na janela do terminal que abrir, execute o comando: python .\splitpdf.py (divide o arquivo em páginas).
 * Os novos arquivos serão criados na pasta PDF_SPLIT.
 * Na janela do terminal, execute o próximo comando: renamepdf.py (captura o texto valor/nome e renomeia).
 * Os novos arquivos renomeados estarão na pasta PDF_FINAL.

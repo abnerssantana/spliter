@@ -1,4 +1,3 @@
-#ABNSS - Splitter | 24 MAR 2024 - Rename PDF
 import os
 import pdfplumber
 from glob import glob
@@ -16,11 +15,12 @@ def extract_text_from_pdf(pdf_path):
 def rename_pdf(pdf_path, output_directory, new_filename):
     if os.path.exists(pdf_path):
         new_filepath = os.path.join(output_directory, f"{new_filename}.pdf")
-        if os.path.exists(new_filepath):
-            print(f"Arquivo já existe: {new_filepath}")
-        else:
-            os.rename(pdf_path, new_filepath)
-            print(f"Arquivo renomeado para: {new_filepath}")
+        counter = 1
+        while os.path.exists(new_filepath):
+            new_filepath = os.path.join(output_directory, f"{new_filename}({counter}).pdf")
+            counter += 1
+        os.rename(pdf_path, new_filepath)
+        print(f"Arquivo renomeado para: {new_filepath}")
     else:
         print(f"Arquivo não encontrado: {pdf_path}")
 
@@ -28,11 +28,15 @@ def rename_pdf(pdf_path, output_directory, new_filename):
 def main():
     input_directory = 'PDF_SPLIT'  # Diretório de entrada dos arquivos PDF
     output_directory = 'PDF_FINAL'  # Diretório de saída para os arquivos renomeados
-
+    
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
 
     pdf_list = glob(f'{input_directory}/*.pdf')  # Lista todos os arquivos PDF no diretório de entrada
+
+    if not pdf_list:
+        print("Diretório de entrada vazio. Coloque os arquivos PDF em 'PDF_SPLIT'.")
+        return
 
     # Loop através de cada arquivo PDF
     for pdf_path in pdf_list:
@@ -43,23 +47,19 @@ def main():
         if len(lines) >= 2:
             # Verifica o tipo de documento com base no conteúdo da segunda linha
             if "RecibodePagamento" in lines[1]:  # Se for um recibo de pagamento
-                if  "DARE-SP/GNRE-SEFAZ/SP" in lines[8]:  # Se a palavra "DARE-SP/GNRE-SEFAZ/SP" estiver na linha 8
+                if  "DARE-SP/GNRE-SEFAZ/SP" in lines[8]:  # Se a palavra "Agência" estiver na linha 5
                     last_word_after_last_space = lines[11].split()[-1].replace(':', '').replace('R$', '').replace('.', '')
                     new_filename = f"{last_word_after_last_space} - FGTS"
                     rename_pdf(pdf_path, output_directory, new_filename)    
-                if  "COMPROVANTEDEPAGAMENTORECOLHIMENTO-FGTSGRF" in lines[5]:
+                elif  "COMPROVANTEDEPAGAMENTORECOLHIMENTO-FGTSGRF" in lines[5]:  # Se a palavra "Agência" estiver na linha 5
                     last_word_after_last_space = lines[11].split()[-1].replace(':', '').replace('R$', '').replace('.', '')
                     new_filename = f"{last_word_after_last_space} - FGTS"
                     rename_pdf(pdf_path, output_directory, new_filename)
-                if  "DARE-SP/GNRE-SEFAZ/SP" in lines[8]:
-                    last_word_after_last_space = lines[11].split()[-1].replace(':', '').replace('R$', '').replace('.', '')
-                    new_filename = f"{last_word_after_last_space} - DARE"
-                    rename_pdf(pdf_path, output_directory, new_filename)    
-                if  "DocumentodeArrecadaçãodoSistema" in lines[11]: 
+                elif  "DocumentodeArrecadaçãodoSistema" in lines[11]:  # Se a palavra "Agência" estiver na linha 5
                     last_word_after_last_space = lines[18].split()[-1].replace(':', '').replace('R$', '').replace('.', '')
                     new_filename = f"{last_word_after_last_space} - DARF"
                     rename_pdf(pdf_path, output_directory, new_filename)    
-                if  "COMPROVANTEDERECOLHIMENTO-FGTSRESCISORIO" in lines[5]:  
+                elif  "COMPROVANTEDERECOLHIMENTO-FGTSRESCISORIO" in lines[5]:  # Se a palavra "Agência" estiver na linha 5
                     last_word_after_last_space = lines[10].split()[-1].replace(':', '').replace('R$', '').replace('.', '')
                     new_filename = f"{last_word_after_last_space} - FGTSRESCISORIO"
                     rename_pdf(pdf_path, output_directory, new_filename)      
@@ -78,15 +78,15 @@ def main():
                     last_word_after_last_space = lines[5].split()[-1].replace(':', '').replace('R$', '').replace('.', '')
                     text_after_first_space_line_9 = lines[9].split(maxsplit=1)[-1].replace('.', '')
                     new_filename = f"{last_word_after_last_space} - {text_after_first_space_line_9}" 
-                if "DARE-SP" in lines[13]:  # Se a palavra "DARE-SP" estiver na linha 13
+                elif "DARE-SP" in lines[13]:  # Se a palavra "DARE-SP" estiver na linha 13
                     last_word_after_last_space = lines[22].split()[-1].replace(':', '').replace('R$', '').replace('.', '')
                     new_filename = f"{last_word_after_last_space} - DARE"
                     rename_pdf(pdf_path, output_directory, new_filename) 
-                if "DARF" in lines[11]:  # Se a palavra "DARF" estiver na linha 11
+                elif "DARF" in lines[11]:  # Se a palavra "DARF" estiver na linha 11
                     last_word_after_last_space = lines[22].split()[-1].replace(':', '').replace('R$', '').replace('.', '')
                     new_filename = f"{last_word_after_last_space} - DARF"
                     rename_pdf(pdf_path, output_directory, new_filename) 
-                if "MUNICIPIO" in lines[12]:  # Se a palavra "MUNICIPIO" estiver na linha 12
+                elif "MUNICIPIO" in lines[12]:  # Se a palavra "MUNICIPIO" estiver na linha 12
                     last_word_after_last_space = lines[5].split()[-1].replace(':', '').replace('R$', '').replace('.', '')
                     new_filename = f"{last_word_after_last_space} - MUNICIPIO"
                     rename_pdf(pdf_path, output_directory, new_filename)               

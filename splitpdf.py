@@ -1,4 +1,4 @@
-#ABNSS - Splitter | 27 FEV 2024 - Pages PDF
+#ABNSS - Splitter | 24 MAR 2024 - Separa páginas
 import PyPDF2
 
 def dividir_pdf(input_path, output_path):

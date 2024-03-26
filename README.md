@@ -17,5 +17,5 @@
 
 #### *Versão 0.1 - 27 de fevereiro de 2024*
 #### *Versão 0.3 - 25 de março de 2024*
- - Renomeia arquivos com mesmo nome adicionando (Nº)
- - Ajuste nos filtros de tipos de arquivos
+ - _Renomeia arquivos com mesmo nome adicionando (Nº)_
+ - _Ajuste nos filtros de tipos de arquivos_

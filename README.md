@@ -15,4 +15,7 @@
 * Os novos arquivos renomeados estarão na pasta PDF_FINAL.
 * Se o tipo de comprovante não for identificado, eles serão mantidos na pasta PDF_SPLIT.
 
-*ABNSS - Versão 0.1 - 27 de fevereiro de 2024*
+#### *Versão 0.1 - 27 de fevereiro de 2024*
+#### *Versão 0.3 - 25 de março de 2024*
+ - Renomeia arquivos com mesmo nome adicionando (Nº)
+ - Ajuste nos filtros de tipos de arquivos

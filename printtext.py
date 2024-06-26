@@ -1,4 +1,4 @@
-#ABNSS - Splitter | 27 FEV 2024 - Print Text PDF
+#ABNSS - Splitter | 22 MAR 2024 - Print Text PDF
 
 import pdfplumber
 from glob import glob
@@ -14,7 +14,7 @@ def extract_text_from_pdf(pdf_path):
 
 def main():
     # Define o diretório onde os arquivos PDF estão localizados.
-    directory = 'PDF_SPLIT'
+    directory = 'PDF_PRINT'
     # Obtém a lista de caminhos para todos os arquivos PDF no diretório especificado.
     pdf_list = glob(f'{directory}/*.pdf')
 

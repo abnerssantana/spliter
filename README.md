@@ -9,12 +9,9 @@
 ## INSTRUÇÕES DE USO
 
 Adicione os arquivos de comprovantes à pasta PDF.
-Na pasta principal Splitter, digite "cmd" na barra de endereços e pressione ↵ Enter.
-Na janela do terminal que abrir, execute o comando: python .\splitpdf.py (divide o arquivo em páginas).
-Os novos arquivos serão criados na pasta PDF_SPLIT.
-Na janela do terminal, execute o próximo comando: python renamepdf.py (captura o texto valor/nome e renomeia).
-Os novos arquivos renomeados estarão na pasta PDF_FINAL.
-Se o tipo de comprovante não for identificado, eles serão mantidos na pasta PDF_SPLIT.
+Na pasta principal Splitter, digite "cmd" na barra de endereços e pressione ↵ Enter. (Windows)
+Na janela do terminal que abrir, execute o comando: python .\splitter.py
+Execute as funções de divisão e renomear
 
 Versão 0.1 - 27 de fevereiro de 2024
 

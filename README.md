@@ -13,10 +13,6 @@ Na pasta principal Splitter, digite "cmd" na barra de endereços e pressione ↵
 Na janela do terminal que abrir, execute o comando: python .\splitter.py
 Execute as funções de divisão e renomear
 
-Versão 2.0 - 22 de agosto de 2024
-
-* Novos layouts dos documentos
-
 Versão 0.1 - 27 de fevereiro de 2024
 
 Versão 0.3 - 25 de março de 2024
@@ -30,3 +26,7 @@ Versão 1.0 - 25 de junho de 2024
 * Melhorias na interface gráfica para permitir a seleção de diretórios e arquivos de entrada/saída.
 * Funções de processamento e divisão de PDFs atualizadas para incluir verificação de existência de arquivos e adicionar contadores.
 * Remover caracteres que não são permitidos como nome de arquivo. 
+
+Versão 2.0 - 22 de agosto de 2024
+
+* Novos layouts dos documentos

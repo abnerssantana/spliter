@@ -1,1 +1,0 @@
-Os novos arquivos renomeados ficam na pasta PDF_FINAL
